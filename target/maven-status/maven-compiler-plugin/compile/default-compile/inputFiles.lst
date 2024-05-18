@@ -1,1 +1,5 @@
 /Users/serafimbronnikov/Desktop/warehouse/src/main/java/com/arta/warehouse/model/Goods.java
+/Users/serafimbronnikov/Desktop/warehouse/src/main/java/com/arta/warehouse/controller/GoodsController.java
+/Users/serafimbronnikov/Desktop/warehouse/src/main/java/com/arta/warehouse/dao/GoodsDAO.java
+/Users/serafimbronnikov/Desktop/warehouse/src/main/java/com/arta/warehouse/dao/DataBaseConnector.java
+/Users/serafimbronnikov/Desktop/warehouse/src/main/java/com/arta/warehouse/service/GoodsService.java

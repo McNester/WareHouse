@@ -1,1 +1,5 @@
+com/arta/warehouse/dao/DataBaseConnector.class
+com/arta/warehouse/controller/GoodsController.class
 com/arta/warehouse/model/Goods.class
+com/arta/warehouse/dao/GoodsDAO.class
+com/arta/warehouse/service/GoodsService.class

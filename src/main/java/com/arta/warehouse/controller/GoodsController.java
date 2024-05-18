@@ -1,8 +1,8 @@
 package com.arta.warehouse.controller;
 
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 import com.arta.warehouse.service.GoodsService;
@@ -11,6 +11,7 @@ import com.arta.warehouse.model.Goods;
 /**
  * GoodsController
  */
+@Path("/goods")
 public class GoodsController {
 	private GoodsService goodsService = new GoodsService();
 
