@@ -7,6 +7,8 @@ import java.util.List;
 
 import com.arta.warehouse.service.GoodsService;
 import com.arta.warehouse.model.Goods;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.IOException;
 
 /**
  * GoodsController
@@ -14,19 +16,27 @@ import com.arta.warehouse.model.Goods;
 @Path("/goods")
 public class GoodsController {
 	private GoodsService goodsService = new GoodsService();
+	private ObjectMapper mapper = new ObjectMapper();
 
 	@POST
 	@Path("/save")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response saveGoods(Goods goods) {
-		goodsService.saveGoods(goods);
-		return Response.ok().build();
+	@Consumes("application/json")
+	@Produces("application/json")
+	public Response saveGoods(String json) {
+		try {
+			System.out.println("Received JSON: " + json + " the end");
+			Goods goods = mapper.readValue(json, Goods.class);
+			goodsService.saveGoods(goods);
+			return Response.ok().build();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return Response.status(Response.Status.BAD_REQUEST).entity("Invalid JSON").build();
+		}
 	}
 
 	@GET
 	@Path("/getAll")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces("application/xml")
 	public List<Goods> getGoods() {
 		return goodsService.getGoods();
 	}
