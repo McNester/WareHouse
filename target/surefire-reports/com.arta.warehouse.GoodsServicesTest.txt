@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.arta.warehouse.GoodsServicesTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.983 s -- in com.arta.warehouse.GoodsServicesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.360 s -- in com.arta.warehouse.GoodsServicesTest

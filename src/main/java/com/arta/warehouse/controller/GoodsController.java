@@ -33,12 +33,27 @@ public class GoodsController {
 			return Response.status(Response.Status.BAD_REQUEST).entity("Invalid JSON").build();
 		}
 	}
+	//
+	// @GET
+	// @Path("/getAll")
+	// @Produces("application/json")
+	// public List<Goods> getGoods() {
+	// return goodsService.getGoods();
+	// }
 
 	@GET
 	@Path("/getAll")
-	@Produces("application/xml")
-	public List<Goods> getGoods() {
-		return goodsService.getGoods();
+	@Produces("application/json")
+	public Response getGoods() {
+		List<Goods> goodsList = goodsService.getGoods();
+		try {
+			String json = mapper.writeValueAsString(goodsList);
+			return Response.ok(json, MediaType.APPLICATION_JSON).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+					.entity("Error converting list to JSON").build();
+		}
 	}
 
 }
